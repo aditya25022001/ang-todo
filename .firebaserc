@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todoapp-ca23f": {
+      "hosting": {
+        "todolist": [
+          "todo-tracker"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todoapp-ca23f"
+  }
+}

@@ -1,6 +1,6 @@
 import * as moment from 'moment'
 export interface Task{
-  id:number,
+  id:string,
   content:string,
   reminder:boolean,
   priority:number,
@@ -8,35 +8,35 @@ export interface Task{
 }
 export const TASKS:Task[] = [
   {
-    id:1,
+    id:"string",
     content:"Doctor appointment",
     reminder:true,
     priority:1,
     dateTime : moment(new Date()).format("MMM Do YY")
   },
   {
-    id:2,
+    id:"string",
     content:"Go to temple",
     reminder:true,
     priority:2,
     dateTime : moment(new Date()).format("MMM Do YY")
   },
   {
-    id:3,
+    id:"string",
     content:"Make angular app",
     reminder:false,
     priority:1,
     dateTime : moment(new Date()).format("MMM Do YY")
   },
   {
-    id:4,
+    id:"string",
     content:"Go to gym",
     reminder:true,
     priority:3,
     dateTime : moment(new Date()).format("MMM Do YY")
   },
   {
-    id:5,
+    id:"string",
     content:"Complete typescript",
     reminder:false,
     priority:2,

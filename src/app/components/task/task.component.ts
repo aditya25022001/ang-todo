@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { TASKS } from 'src/app/data';
 import { Task } from 'src/app/data';
 import { TaskService } from 'src/app/services/task.service';
 
@@ -15,11 +14,11 @@ export class TaskComponent {
   constructor(private taskService:TaskService){}
 
   ngOnInit():void{
-    this.taskService.getTasks().subscribe((tasks) => this.tasks=tasks)
+    this.tasks = this.taskService.getTasks();
   }
 
-  onClick(id:number):void{
-    console.log("delete task",id)
+  onClick(id:string):void{
+    this.taskService.deleteTask(id);
   }
 
 }

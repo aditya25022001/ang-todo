@@ -17,10 +17,10 @@ header{
   align-items: center;
 }
 .container {
-  max-width: 550px;
+  max-width: 500px;
   margin: 30px auto;
   overflow: auto;
-  min-height: 300px;
+  min-height: 500px;
   box-shadow: 2px 10px 15px rgb(205, 205, 205);
   padding: 20px 30px;
   border:1px solid rgb(230, 230, 230);
@@ -55,4 +55,12 @@ header{
 }
 .icon:hover{
   color: var(--error);
+}
+circle{
+  stroke: var(--primary) !important;
+}
+@media screen and (max-width: 553px){
+  .container{
+    max-width: 95%;
+  }
 }
