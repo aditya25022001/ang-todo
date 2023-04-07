@@ -2,12 +2,12 @@
   <mat-spinner class="mx-auto" style="top:130px;" strokeWidth="3" diameter="60" color="var(--error)" *ngIf="tasks.length===0"></mat-spinner>
   <div *ngFor="let task of tasks" class="taskitem my-3">
     <div class="{{task.priority===1?'high':task.priority===2?'moderate':'low'}} priority"></div>
-    <div class="py-2  px-3 data">
+    <div class="py-2 px-3 data" (dblclick)="updatePriority(task)">
       <div>
         <div>{{task.content}}</div>
         <div>{{task.dateTime}}</div>
       </div>
-      <mat-icon class="icon" style="font-size: 22px;" fontIcon="delete" style="cursor:pointer;" (click)="onClick(task.id)"></mat-icon>
+      <mat-icon class="icon" style="font-size: 22px;" fontIcon="delete" style="cursor:pointer;" (click)="deleteTask(task.id)"></mat-icon>
     </div>
   </div>
 </div>

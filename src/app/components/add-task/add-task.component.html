@@ -1,0 +1,41 @@
+<form autocomplete="off" (ngSubmit)="addTask()">
+  <input
+    type="text"
+    required
+    id="content"
+    name="content"
+    placeholder="Add task brief"
+    class="form-control"
+    [(ngModel)]="content"
+  />
+  <br/>
+  <div class="d-flex mb-3" style="justify-content: space-between; align-items: center;">
+    <input
+      type="text"
+      required
+      placeholder="Set time limit"
+      style="flex:0.475;"
+      id="dateTime"
+      name="dateTime"
+      class="form-control"
+      [(ngModel)]="dateTime"
+    />
+    <input
+      type="number"
+      [min]=1 [max]=3
+      [defaultValue]="1"
+      style="flex:0.475;"
+      id="priority"
+      name="priority"
+      class="form-control"
+      placeholder="Priority"
+      [(ngModel)]="priority"
+    />
+  </div>
+  <app-button
+    class="py-2"
+    color="var(--primary)"
+    text="Add Task"
+  ></app-button>
+</form>
+<mat-divider class="mt-3"></mat-divider>

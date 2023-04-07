@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
-
   name:string = "Todo List"
 
   constructor(){}
@@ -15,6 +14,6 @@ export class HeaderComponent {
   ngOnInit():void{}
 
   toggleForm(){
-    console.log("button one")
+    console.log("toggle form")
   }
 }

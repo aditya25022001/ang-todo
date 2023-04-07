@@ -17,8 +17,14 @@ export class TaskComponent {
     this.tasks = this.taskService.getTasks();
   }
 
-  onClick(id:string):void{
+  deleteTask(id:string|undefined):void{
     this.taskService.deleteTask(id);
+    this.tasks = this.tasks.filter(t => t.id !== id);
+  }
+
+  updatePriority(task:Task):void{
+    task.priority = task.priority%3+1;
+    this.taskService.updateTaskPriority(task,task.priority);
   }
 
 }

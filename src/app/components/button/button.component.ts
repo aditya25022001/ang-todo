@@ -10,6 +10,7 @@ export class ButtonComponent{
   //props
   @Input() color:string | undefined;
   @Input() text:string | undefined;
+  @Input() class:string | undefined;
   @Output() buttonClick = new EventEmitter()
 
   constructor(){}
