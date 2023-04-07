@@ -1,9 +1,9 @@
 <header class="">
   <h2 class="mb-0 pb-0">{{ name }}</h2>
   <app-button
-    color="var(--primary)"
-    text="Add Task Form"
-    (buttonClick)="toggleForm()"
-  ></app-button>
+    color="{{show ? 'var(--error)' : 'var(--success)'}}"
+    text="{{show ? 'Cancel' : 'Add Task'}}"
+    (buttonClick)="toggleForm()">
+  </app-button>
 </header>
 

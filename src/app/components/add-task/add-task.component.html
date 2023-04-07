@@ -1,7 +1,7 @@
-<form autocomplete="off" (ngSubmit)="addTask()">
+<form autocomplete="off" *ngIf="show" (ngSubmit)="addTask()">
   <input
     type="text"
-    required
+    required="true"
     id="content"
     name="content"
     placeholder="Add task brief"
@@ -32,10 +32,11 @@
       [(ngModel)]="priority"
     />
   </div>
-  <app-button
-    class="py-2"
-    color="var(--primary)"
-    text="Add Task"
-  ></app-button>
+  <input
+    type="submit"
+    class="py-2 button w-100"
+    value="Add Task"
+    style="background-color: var(--primary);"
+  />
+  <mat-divider class="my-3"></mat-divider>
 </form>
-<mat-divider class="mt-3"></mat-divider>

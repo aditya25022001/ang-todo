@@ -6,8 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./button.component.css']
 })
 export class ButtonComponent{
-
-  //props
+  
   @Input() color:string | undefined;
   @Input() text:string | undefined;
   @Input() class:string | undefined;

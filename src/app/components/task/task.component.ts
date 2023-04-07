@@ -10,11 +10,19 @@ import { TaskService } from 'src/app/services/task.service';
 export class TaskComponent {
 
   tasks : Task[] = []
+  loading:boolean = true
+  window:string = ""
 
   constructor(private taskService:TaskService){}
 
   ngOnInit():void{
+    this.window = window.location.pathname
     this.tasks = this.taskService.getTasks();
+    if(this.tasks.length===0){
+      setTimeout(()=>{
+        this.loading=false;
+      },1100)
+    }
   }
 
   deleteTask(id:string|undefined):void{

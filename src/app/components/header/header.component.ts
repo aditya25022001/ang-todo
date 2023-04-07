@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter  } from '@angular/core';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-header',
@@ -8,12 +10,18 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   name:string = "Todo List"
+  show:boolean = false
+  subscription:Subscription | undefined;
 
-  constructor(){}
+  @Output() toggle = new EventEmitter<boolean>()
+
+  constructor(private uiService:UiService){
+    this.subscription = this.uiService.onToggle().subscribe((show) => this.show=show)
+  }
 
   ngOnInit():void{}
 
   toggleForm(){
-    console.log("toggle form")
+    this.uiService.toggleShow()
   }
 }
